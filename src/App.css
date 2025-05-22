@@ -7,4 +7,5 @@
 }
 @theme {
   --font-primary: "Roboto", sans-serif;
+  --breakpoint-xs: 26.25rem;
 }

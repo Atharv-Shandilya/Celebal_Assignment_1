@@ -10,21 +10,27 @@ import BackgroundSvg from "./components/BackgroundSvg";
 import formValidation2 from "./hooks/formValidation2";
 
 function App() {
-  const [formPage, setFormPage] = useState(1);
+  const [formPage, setFormPage] = useState(3);
 
   const [showPassword, setShowPassword] = useState(false);
 
   const [form, setForm] = useState<IForm>({
-    firstName: "",
-    lastName: "",
-    userName: "",
-    password: "",
-    email: "",
-    phone: "",
-    country: null,
-    city: null,
-    aadhar: "",
-    pan: "",
+    firstName: "Amit",
+    lastName: "Sharma",
+    userName: "amit.sharma25",
+    password: "Secure@1234", // (Use a strong password in production)
+    email: "amit.sharma@example.com",
+    phone: "9876543210",
+    country: {
+      name: "India",
+      isoCode: "IN",
+      phonecode: "91",
+    },
+    city: {
+      name: "Mumbai",
+    },
+    aadhar: "123456789101",
+    pan: "ABCDE1234F",
   });
 
   const [formError, setFormError] = useState<IFormError>({
@@ -46,7 +52,7 @@ function App() {
   return (
     <main className="  font-primary relative h-screen ">
       <BackgroundSvg />
-      <article className="shadow-lg rounded-2xl bg-white p-9 w-[80%] sm:w-[75%] absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:w-[55%]">
+      <article className="shadow-lg rounded-2xl bg-white p-9 w-[95%] sm:w-[75%] absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:w-[65%]">
         <h2 className="text-center mb-4 font-bold text-xl">Sign up</h2>
 
         <div className="">
@@ -75,7 +81,7 @@ function App() {
         )}
 
         {formPage == 3 && (
-          <section className=" [&>div]:mb-4 [&_h2]:font-bold [&>div]:last-of-type:mb-0 [&_h2]:mb-1 [&_h3]:text-gray-400 text-center shadow-sm px-4 py-8 rounded-2xl bg-[#F1F4F9]/40 [&>div>div]:mb-[2px] flex justify-between">
+          <section className=" [&>div]:mb-4 [&_h2]:font-bold [&_h2]:text-lg md:[&_h2]:text-base [&>div]:last-of-type:mb-0 [&_h2]:mb-1 [&_h3]:text-gray-400 text-left xs:text-center shadow-sm px-4 py-8 rounded-2xl bg-[#F1F4F9]/40 [&>div>div]:mb-[2px] flex flex-col lg:flex-row md:justify-around">
             <div>
               <h2>User Info</h2>
               <div>
