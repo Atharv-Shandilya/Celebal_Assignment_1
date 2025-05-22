@@ -10,7 +10,7 @@ import BackgroundSvg from "./components/BackgroundSvg";
 import formValidation2 from "./hooks/formValidation2";
 
 function App() {
-  const [formPage, setFormPage] = useState(3);
+  const [formPage, setFormPage] = useState(1);
 
   const [showPassword, setShowPassword] = useState(false);
 
