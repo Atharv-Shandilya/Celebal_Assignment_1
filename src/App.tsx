@@ -15,22 +15,16 @@ function App() {
   const [showPassword, setShowPassword] = useState(false);
 
   const [form, setForm] = useState<IForm>({
-    firstName: "Amit",
-    lastName: "Sharma",
-    userName: "amit.sharma25",
-    password: "Secure@1234", // (Use a strong password in production)
-    email: "amit.sharma@example.com",
-    phone: "9876543210",
-    country: {
-      name: "India",
-      isoCode: "IN",
-      phonecode: "91",
-    },
-    city: {
-      name: "Mumbai",
-    },
-    aadhar: "123456789101",
-    pan: "ABCDE1234F",
+    firstName: "",
+    lastName: "",
+    userName: "",
+    password: "",
+    email: "",
+    phone: "",
+    country: null,
+    city: null,
+    aadhar: "",
+    pan: "",
   });
 
   const [formError, setFormError] = useState<IFormError>({
