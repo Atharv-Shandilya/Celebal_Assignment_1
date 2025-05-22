@@ -15,39 +15,16 @@ function App() {
   const [showPassword, setShowPassword] = useState(false);
 
   const [form, setForm] = useState<IForm>({
-    firstName: "Atharva",
-    lastName: "Shandilya",
-    userName: "Kryptic",
-    password: "3Atharva24@2004",
-    email: "atharva@gmail.com",
-    phone: "9973305617",
-    country: {
-      isoCode: "IN",
-      name: "India",
-      phonecode: "91",
-      flag: "🇮🇳",
-      currency: "INR",
-      latitude: "20.00000000",
-      longitude: "77.00000000",
-      timezones: [
-        {
-          zoneName: "Asia/Kolkata",
-          gmtOffset: 19800,
-          gmtOffsetName: "UTC+05:30",
-          abbreviation: "IST",
-          tzName: "Indian Standard Time",
-        },
-      ],
-    },
-    city: {
-      name: "New Delhi",
-      countryCode: "IN",
-      stateCode: "DL",
-      latitude: "28.63576000",
-      longitude: "77.22445000",
-    },
-    aadhar: "914603900247",
-    pan: "BIBKA6742I",
+    firstName: "",
+    lastName: "",
+    userName: "",
+    password: "",
+    email: "",
+    phone: "",
+    country: null,
+    city: null,
+    aadhar: "",
+    pan: "",
   });
 
   const [formError, setFormError] = useState<IFormError>({
