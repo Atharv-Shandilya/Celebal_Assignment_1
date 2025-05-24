@@ -2,13 +2,24 @@ export interface IFormError {
   firstName: IError;
   lastName: IError;
   userName: IError;
-  password: IError;
+  password: IPasswordError;
   email: IError;
   phone: IError;
   country: IError;
   city: IError;
   aadhar: IError;
   pan: IError;
+}
+
+interface IPasswordError extends IError {
+  checks: {
+    upper: boolean;
+    lower: boolean;
+    special: boolean;
+    "no-space": boolean;
+    length: boolean;
+    digit: boolean;
+  };
 }
 
 interface IError {

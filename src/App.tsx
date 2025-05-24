@@ -31,7 +31,18 @@ function App() {
     firstName: { errorStatus: false, errorMessage: "" },
     lastName: { errorStatus: false, errorMessage: "" },
     userName: { errorStatus: false, errorMessage: "" },
-    password: { errorStatus: false, errorMessage: "" },
+    password: {
+      errorStatus: false,
+      errorMessage: "",
+      checks: {
+        upper: false,
+        lower: false,
+        special: false,
+        "no-space": false,
+        length: false,
+        digit: false,
+      },
+    },
     email: { errorStatus: false, errorMessage: "" },
     phone: { errorStatus: false, errorMessage: "" },
     country: { errorStatus: false, errorMessage: "" },
@@ -44,9 +55,9 @@ function App() {
   const [showCity, setShowCity] = useState(false);
 
   return (
-    <main className="  font-primary relative h-screen ">
+    <main className="  font-primary relative  h-screen ">
       <BackgroundSvg />
-      <article className="shadow-lg rounded-2xl bg-white p-9 w-[95%] sm:w-[75%] absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:w-[65%]">
+      <article className="shadow-lg  rounded-2xl bg-white p-9 w-[95%] sm:w-[75%] absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:w-[65%]">
         <h2 className="text-center mb-4 font-bold text-xl">Sign up</h2>
 
         <div className="">
@@ -59,6 +70,7 @@ function App() {
             formError={formError}
             showPassword={showPassword}
             setShowPassword={setShowPassword}
+            setFormError={setFormError}
           />
         )}
 
@@ -71,6 +83,7 @@ function App() {
             showCity={showCity}
             setShowCity={setShowCity}
             formError={formError}
+            setFormError={setFormError}
           />
         )}
 

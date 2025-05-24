@@ -11,6 +11,7 @@ export default ({
   showCity,
   setShowCity,
   formError,
+  setFormError,
 }: {
   form: IForm;
   setForm: React.Dispatch<React.SetStateAction<IForm>>;
@@ -19,6 +20,7 @@ export default ({
   showCity: boolean;
   setShowCity: React.Dispatch<React.SetStateAction<boolean>>;
   formError: IFormError;
+  setFormError: React.Dispatch<React.SetStateAction<IFormError>>;
 }) => {
   return (
     <>
@@ -47,6 +49,7 @@ export default ({
           label="Country"
           name="country"
           error={formError}
+          setError={setFormError}
         />
 
         <DropDown<ICity>
@@ -66,6 +69,7 @@ export default ({
           getName={(item) => {
             return item.name;
           }}
+          setError={setFormError}
           showDrop={showCity}
           setShowDrop={setShowCity}
           label="City"
@@ -87,6 +91,8 @@ export default ({
           }}
           name="phone"
           error={formError}
+          setError={setFormError}
+          form={form}
         />
       </InputContainer>
       <InputContainer>
@@ -99,6 +105,8 @@ export default ({
           }}
           name="aadhar"
           error={formError}
+          setError={setFormError}
+          form={form}
         />
         <TextInput
           label="Pan No."
@@ -109,6 +117,8 @@ export default ({
           }}
           name="pan"
           error={formError}
+          setError={setFormError}
+          form={form}
         />
       </InputContainer>
     </>

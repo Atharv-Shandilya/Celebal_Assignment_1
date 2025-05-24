@@ -6,6 +6,7 @@ export default ({
   form,
   setForm,
   formError,
+  setFormError,
   showPassword,
   setShowPassword,
 }: {
@@ -14,6 +15,7 @@ export default ({
   formError: IFormError;
   showPassword: boolean;
   setShowPassword: React.Dispatch<React.SetStateAction<boolean>>;
+  setFormError: React.Dispatch<React.SetStateAction<IFormError>>;
 }) => {
   return (
     <>
@@ -27,6 +29,8 @@ export default ({
           }}
           name="firstName"
           error={formError}
+          setError={setFormError}
+          form={form}
         />
         <TextInput
           label="Last Name"
@@ -37,6 +41,8 @@ export default ({
           }}
           name="lastName"
           error={formError}
+          setError={setFormError}
+          form={form}
         />
       </InputContainer>
 
@@ -50,6 +56,8 @@ export default ({
           }}
           name="userName"
           error={formError}
+          setError={setFormError}
+          form={form}
         />
         <TextInput
           label="Password"
@@ -63,6 +71,8 @@ export default ({
           }}
           name="password"
           error={formError}
+          setError={setFormError}
+          form={form}
         />
       </InputContainer>
 
@@ -76,6 +86,8 @@ export default ({
           }}
           name="email"
           error={formError}
+          setError={setFormError}
+          form={form}
         />
       </InputContainer>
     </>

@@ -1,4 +1,5 @@
 import type { IForm, IFormError } from "../types/form";
+import passwordCheck from "./passwordCheck";
 
 export default (
   formError: IFormError,
@@ -13,6 +14,11 @@ export default (
       errorStatus: true,
       errorMessage: "This field is required",
     };
+  } else if (!/^[A-Za-z]+$/.test(form.firstName)) {
+    newErrors.firstName = {
+      errorStatus: true,
+      errorMessage: "only alphabets are valid",
+    };
   } else {
     newErrors.firstName = {
       errorStatus: false,
@@ -25,6 +31,11 @@ export default (
     newErrors.lastName = {
       errorStatus: true,
       errorMessage: "This field is required",
+    };
+  } else if (!/^[A-Za-z]+$/.test(form.lastName)) {
+    newErrors.lastName = {
+      errorStatus: true,
+      errorMessage: "only alphabets are valid",
     };
   } else {
     newErrors.lastName = {
@@ -39,6 +50,11 @@ export default (
       errorStatus: true,
       errorMessage: "This field is required",
     };
+  } else if (!/^[A-Za-z]+$/.test(form.userName)) {
+    newErrors.userName = {
+      errorStatus: true,
+      errorMessage: "only alphabets are valid",
+    };
   } else {
     newErrors.userName = {
       errorStatus: false,
@@ -47,47 +63,7 @@ export default (
   }
 
   // Password
-  if (form.password === "") {
-    newErrors.password = {
-      errorStatus: true,
-      errorMessage: "Field is required",
-    };
-  } else if (!/[A-Z]/.test(form.password)) {
-    newErrors.password = {
-      errorStatus: true,
-      errorMessage: "Add uppercase.",
-    };
-  } else if (!/[a-z]/.test(form.password)) {
-    newErrors.password = {
-      errorStatus: true,
-      errorMessage: "Add lowercase",
-    };
-  } else if (!/[0-9]/.test(form.password)) {
-    newErrors.password = {
-      errorStatus: true,
-      errorMessage: "Add digit.",
-    };
-  } else if (/\s/.test(form.password)) {
-    newErrors.password = {
-      errorStatus: true,
-      errorMessage: "no spaces.",
-    };
-  } else if (!/[!@#$%^&*()_+\[\]{};:'"<>,.?~\\/-]/.test(form.password)) {
-    newErrors.password = {
-      errorStatus: true,
-      errorMessage: "Add symbol.",
-    };
-  } else if (form.password.length <= 7) {
-    newErrors.password = {
-      errorStatus: true,
-      errorMessage: "min 8 chars.",
-    };
-  } else {
-    newErrors.password = {
-      errorStatus: false,
-      errorMessage: "",
-    };
-  }
+  passwordCheck(form, newErrors);
 
   // Email
   if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(form.email)) {

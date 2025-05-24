@@ -1,11 +1,9 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import { fontFamily } from "tailwindcss/defaultTheme";
 
-module.exports = {
-  theme: {
-    extend: {
-      fontFamily: {
-        poppins: ["Poppins", ...fontFamily.sans],
-      },
+export const theme = {
+  extend: {
+    fontFamily: {
+      poppins: ["Poppins", ...fontFamily.sans],
     },
   },
 };
